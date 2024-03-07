@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "chart.js": "^4.4.1",
+    "d3": "^7.8.5",
+    "lodash": "^4.17.21",
+    "react": "^18.2.0",
+    "react-compound-timer": "^2.0.5",
+    "react-countdown": "^2.3.5",
+    "react-countdown-circle-timer": "^3.2.1",
+    "react-dom": "^18.2.0",
+    "react-timer-hook": "^3.0.7",
+    "victory": "^36.9.1",
+    "victory-core": "^36.9.1"
+  }
+}
