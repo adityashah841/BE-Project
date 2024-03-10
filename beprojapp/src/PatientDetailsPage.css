@@ -128,3 +128,5 @@ li {
 .patient-actions a:hover {
   text-decoration: underline;
 }
+
+.patient-details-table { width: 100%; border-collapse: collapse; } .patient-details-table th, .patient-details-table td { border: 1px solid black; padding: 8px; text-align: left; font-size: 16px; background-color: #f2f2f2; }

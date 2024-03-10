@@ -2,20 +2,33 @@ import React, { useState, useEffect } from 'react';
 import Countdown from 'react-countdown';
 
 function PatientPage() {
-  const [usageTimeLeft, setUsageTimeLeft] = useState(1800000); // Static usage time of 30 minutes
+  const [usageTimeLeft, setUsageTimeLeft] = useState(180000); // Static usage time of 30 minutes
   const [selectedVRWorld, setSelectedVRWorld] = useState(null);
+  const [isWindowOpen, setIsWindowOpen] = useState(false);
 
-  // Fetch usage time from a backend API or calculate locally
   useEffect(() => {
-    // const fetchUsageTime = async () => {
-    //   // ... logic to fetch usage time from your backend
-    //   const response = await fetch('/api/patient/usage');  
-    //   const data = await response.json();
-    //   setUsageTimeLeft(data.timeRemaining); // Example data format
-    // };
+    let timer;
+    if (isWindowOpen) {
+      timer = setTimeout(() => {
+        setIsWindowOpen(false); // Close the window after 5 minutes
+      }, 30000); // 5 minutes
+    }
 
-    // fetchUsageTime(); 
-  }, []); 
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [isWindowOpen]);
+
+  const openWindow = () => {
+    setIsWindowOpen(true);
+    // Open your window here, adjust properties as needed
+    const newWindow = window.open('', 'Window Name', 'width=400,height=400');
+    if (newWindow) {
+      newWindow.onbeforeunload = () => {
+        setIsWindowOpen(false);
+      };
+    }
+  };
 
   return (
     <div>
@@ -44,8 +57,14 @@ function PatientPage() {
       )}
 
       <h2>Select Your VR World</h2>
+      {/* Button to open window */}
+      <button onClick={openWindow}>Open Window</button>
 
-      {/* Add more patient portal features here as needed  */}
+      {isWindowOpen && (
+        <p>Window is open for 5 minutes. Display any content here.</p>
+      )}
+
+      {/* Add more patient portal features here as needed */}
     </div>
   );
 }

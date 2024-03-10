@@ -97,16 +97,7 @@ const PatientDetailsPage = () => {
     <div className="patient-details-page">
       <div className="patient-details">
         <h1>Patient Details</h1>
-        <p>Name: John Doe</p>
-        <p>Age: 30</p>
-        <p>Condition: Diabetes</p>
-        <p>Last Appointment: 2023-02-22</p>
-        <p>Next Appointment: 2023-03-22</p>
-        <p>Medications:</p>
-        <ul>
-          <li>Metformin 500mg, 1 tablet twice daily</li>
-          <li>Lantus 10 units daily</li>
-        </ul>
+        <table className="patient-details-table"> <thead> <tr> <th>Patient Details</th> </tr> </thead> <tbody> <tr> <td>Name: John Doe</td> </tr> <tr> <td>Age: 30</td> </tr> <tr> <td>Condition: Diabetes</td> </tr> <tr> <td>Last Appointment: 2023-02-22</td> </tr> <tr> <td>Next Appointment: 2023-03-22</td> </tr> <tr> <td>Medications:</td> </tr> <tr> <td>- Metformin 500mg, 1 tablet twice daily</td> </tr> <tr> <td>- Lantus 10 units daily</td> </tr> </tbody> </table>
       </div>
       <div className="charts">
         <div className="chart-container">
