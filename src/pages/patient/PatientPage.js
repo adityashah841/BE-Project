@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 import { Background } from 'victory-core';
+import { Link } from 'react-router-dom';
 function PatientPage() {
   const [usageTimeLeft, setUsageTimeLeft] = useState(1000); // Static usage time of 30 minutes
   const [selectedVRWorld, setSelectedVRWorld] = useState(null);
@@ -66,7 +67,7 @@ function PatientPage() {
                 fontWeight: "bold",
                 height: "200px"
               }} >
-                World 1
+                <Link to='http://localhost:5173/'>World 1</Link>
               </Paper>
             </Grid>
             <Grid item xs={4}>
