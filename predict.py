@@ -3,6 +3,7 @@ import tensorflow as tf
 import joblib
 import numpy as np
 import json
+from sklearn.preprocessing import StandardScaler
 
 class MeanMetricWrapper(tf.keras.metrics.MeanMetricWrapper):
     def __init__(self, name='mean_metric_wrapper', dtype=None):
@@ -52,6 +53,7 @@ if __name__ == "__main__":
 
     input_data = [float(x) for x in sys.argv[1:]]  # Convert arguments to floats
     W = joblib.load('pca_transformation_matrix.joblib')
+    input_data = scaler.fit_transform(input_data)
     input_data = np.dot(input_data, W)
 
     # Example model prediction
