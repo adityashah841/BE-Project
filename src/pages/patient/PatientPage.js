@@ -67,7 +67,7 @@ function PatientPage() {
                 fontWeight: "bold",
                 height: "200px"
               }} >
-                <Link to='http://localhost:5173/'>World 1</Link>
+                <Link to='http://interactive.convai.com/'>World 1</Link>
               </Paper>
             </Grid>
             <Grid item xs={4}>
