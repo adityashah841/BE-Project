@@ -3,7 +3,7 @@ import './DoctorPage.css';
 import { Link } from 'react-router-dom';
 
 const patients = [ // Replace with actual data fetching logic
-  { id: 1, name: 'John Doe', age: 30, condition: 'Diabetes' },
+  { id: 1, name: 'Gautam Mehendale', age: 22, condition: 'None' },
   { id: 2, name: 'Jane Smith', age: 25, condition: 'Heart Disease' },
   { id: 3, name: 'Michael Johnson', age: 45, condition: 'High Blood Pressure' },
 ];

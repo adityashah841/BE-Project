@@ -3,7 +3,6 @@ import Countdown from 'react-countdown';
 
 function PatientPage() {
   const [usageTimeLeft, setUsageTimeLeft] = useState(180000); // Static usage time of 30 minutes
-  const [selectedVRWorld, setSelectedVRWorld] = useState(null);
   const [isWindowOpen, setIsWindowOpen] = useState(false);
 
   useEffect(() => {
@@ -22,7 +21,7 @@ function PatientPage() {
   const openWindow = () => {
     setIsWindowOpen(true);
     // Open your window here, adjust properties as needed
-    const newWindow = window.open('', 'Window Name', 'width=400,height=400');
+    const newWindow = window.open('https://interactive.convai.com/', 'Window Name', 'width=400,height=400');
     if (newWindow) {
       newWindow.onbeforeunload = () => {
         setIsWindowOpen(false);
